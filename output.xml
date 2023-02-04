@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.0.2 (Python 3.8.0 on linux)" generated="20230204 13:05:39.068" rpa="false" schemaversion="3">
+<suite id="s1" name="swAPI project" source="/home/shamil/PycharmProjects/swAPI_project">
+<suite id="s1-s1" name="Robot" source="/home/shamil/PycharmProjects/swAPI_project/Robot.robot">
+<test id="s1-s1-t1" name="People" line="11">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230204 13:05:39.127" level="INFO">Creating Session using : alias=myssion, url=http://127.0.0.1:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230204 13:05:39.127" endtime="20230204 13:05:39.127"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion</arg>
+<arg>/people/${person}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230204 13:05:39.130" level="INFO">GET Request : url=http://127.0.0.1:8000/people/4 
+ path_url=/people/4 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230204 13:05:39.130" level="INFO">GET Response : url=http://127.0.0.1:8000/people/4 
+ status=200, reason=OK 
+ headers={'date': 'Sat, 04 Feb 2023 09:05:38 GMT', 'server': 'uvicorn', 'content-length': '13', 'content-type': 'application/json'} 
+ body={"item_id":4} 
+ </msg>
+<msg timestamp="20230204 13:05:39.130" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230204 13:05:39.127" endtime="20230204 13:05:39.130"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230204 13:05:39.130" endtime="20230204 13:05:39.131"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230204 13:05:39.131" endtime="20230204 13:05:39.131"/>
+</kw>
+<status status="PASS" starttime="20230204 13:05:39.126" endtime="20230204 13:05:39.131"/>
+</test>
+<test id="s1-s1-t2" name="Starships" line="16">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230204 13:05:39.132" level="INFO">Creating Session using : alias=myssion, url=http://127.0.0.1:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230204 13:05:39.132" endtime="20230204 13:05:39.132"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion</arg>
+<arg>/starships/${starship}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230204 13:05:39.134" level="INFO">GET Request : url=http://127.0.0.1:8000/starships/4 
+ path_url=/starships/4 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230204 13:05:39.134" level="INFO">GET Response : url=http://127.0.0.1:8000/starships/4 
+ status=200, reason=OK 
+ headers={'date': 'Sat, 04 Feb 2023 09:05:38 GMT', 'server': 'uvicorn', 'content-length': '17', 'content-type': 'application/json'} 
+ body={"starship_id":4} 
+ </msg>
+<msg timestamp="20230204 13:05:39.134" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230204 13:05:39.132" endtime="20230204 13:05:39.135"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230204 13:05:39.135" endtime="20230204 13:05:39.135"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230204 13:05:39.135" endtime="20230204 13:05:39.136"/>
+</kw>
+<status status="PASS" starttime="20230204 13:05:39.132" endtime="20230204 13:05:39.136"/>
+</test>
+<test id="s1-s1-t3" name="Planets" line="21">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>${base_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230204 13:05:39.136" level="INFO">Creating Session using : alias=myssion, url=http://127.0.0.1:8000, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230204 13:05:39.136" endtime="20230204 13:05:39.136"/>
+</kw>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion</arg>
+<arg>/planets/${planet}</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230204 13:05:39.139" level="INFO">GET Request : url=http://127.0.0.1:8000/planets/4 
+ path_url=/planets/4 
+ headers={'User-Agent': 'python-requests/2.28.2', 'Accept-Encoding': 'gzip, deflate, br', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230204 13:05:39.139" level="INFO">GET Response : url=http://127.0.0.1:8000/planets/4 
+ status=200, reason=OK 
+ headers={'date': 'Sat, 04 Feb 2023 09:05:38 GMT', 'server': 'uvicorn', 'content-length': '15', 'content-type': 'application/json'} 
+ body={"planet_id":4} 
+ </msg>
+<msg timestamp="20230204 13:05:39.139" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230204 13:05:39.137" endtime="20230204 13:05:39.139"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.status_code}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230204 13:05:39.139" endtime="20230204 13:05:39.139"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>${response.content}</arg>
+<doc>Logs the given message to the console.</doc>
+<status status="PASS" starttime="20230204 13:05:39.139" endtime="20230204 13:05:39.140"/>
+</kw>
+<status status="PASS" starttime="20230204 13:05:39.136" endtime="20230204 13:05:39.140"/>
+</test>
+<status status="PASS" starttime="20230204 13:05:39.085" endtime="20230204 13:05:39.140"/>
+</suite>
+<status status="PASS" starttime="20230204 13:05:39.070" endtime="20230204 13:05:39.141"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="swAPI project">swAPI project</stat>
+<stat pass="3" fail="0" skip="0" id="s1-s1" name="Robot">swAPI project.Robot</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
